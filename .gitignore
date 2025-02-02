@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Django specific files
+db.sqlite3
+media/
+staticfiles/
+
+# Ignore .env files (security)
+.env
+*.env
+
+# Migrations (optional, can be recreated)
+**/migrations/*.py
+**/migrations/*.pyc
+
+# Logs and temp files
+*.log
+logs/
+*.out
+*.pid
+*.swp
+
+# VSCode and JetBrains IDE files
+.vscode/
+.idea/
+
+# Docker files
+*.docker
+docker-compose.override.yml
+
+# Python dependencies
+*.egg
+*.egg-info/
+dist/
+build/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# macOS system files
+.DS_Store
+
+# Ignore compiled translations
+*.mo
