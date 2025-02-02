@@ -43,6 +43,11 @@ A **ticketing system** built with Django and Python, designed to allow users to 
 
 ## Screen Recordings
 
+### Staff View:
+- Description: Highlights the view for support staff, where they can access all submitted tickets. Staff can filter tickets by status, add comments, and update ticket statuses to track progress.
+
+https://github.com/user-attachments/assets/1dfde821-13e7-40c2-a637-fd0213e4eb1d
+
 ### User Ticket View:
 - Description: This view shows how a regular user would create an account, login, and what their home page looks like. Users can track the status of their tickets, add replies, and view responses from the support team.
 
@@ -57,11 +62,6 @@ https://github.com/user-attachments/assets/9b65086c-e605-4046-a3db-234b989a1313
 - Description: Displays how users can update their profile information, including their username, email, and profile picture. This feature allows users to keep their information up to date.
 
 https://github.com/user-attachments/assets/917d2493-5492-4fe7-ba50-948ff49002d7
-
-### Staff View:
-- Description: Highlights the view for support staff, where they can access all submitted tickets. Staff can filter tickets by status, add comments, and update ticket statuses to track progress.
-
-https://github.com/user-attachments/assets/1dfde821-13e7-40c2-a637-fd0213e4eb1d
 
 ### Admin View:
 - Description: Shows the admin dashboard with full access to all tickets and user profiles. Admins can manage user accounts, view ticket statistics, and oversee the entire ticketing system.
