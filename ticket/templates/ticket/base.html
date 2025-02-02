@@ -39,15 +39,23 @@
 	
 	        <!-- Navbar Right Side -->
 	        <div class="navbar-nav">
-	          {% if user.is_authenticated %}
-	          	  <a class="nav-item nav-link" href="{% url 'ticket-create' %}">Create Ticket</a>
-	          	  <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-	          	  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-	          {% else %}
-		          <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-		          <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-		      {% endif %}  
-	        </div>
+				{% if user.is_authenticated %}
+					<a class="nav-item nav-link" href="{% url 'ticket-create' %}">Create Ticket</a>
+					<a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+			
+					<!-- Fix: Use a form for logout instead of a <a> tag -->
+					<form action="{% url 'logout' %}" method="post" class="nav-item">
+						{% csrf_token %}
+						<button type="submit" class="nav-link btn btn-link" style="border: none; background: none; cursor: pointer;">
+							Logout
+						</button>
+					</form>
+					
+				{% else %}
+					<a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+					<a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+				{% endif %}  
+			</div>
 	      </div>
 	    </div>
 	  </nav>
