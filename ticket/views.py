@@ -31,21 +31,21 @@ class FilterListView(LoginRequiredMixin, ListView):
 	template_name = 'ticket/user_tickets.html'
 	context_object_name = 'tickets'
 	paginate_by = 5
-	ordering = ['-urgency', '-date_ticketed']
+	ordering = ['date_ticketed', '-urgency']
 
 	def get_queryset(self):  
 		queryset = super().get_queryset()
 		status = self.kwargs.get('status')
 		if status:
 			if self.request.user.has_perm("ticket.view_ticket"):
-				queryset = queryset.filter(status=status).order_by('-urgency')
+				queryset = queryset.filter(status=status).order_by('-date_ticketed')
 			else:
-				queryset = queryset.filter(author=self.request.user, status=status).order_by('-urgency')
+				queryset = queryset.filter(author=self.request.user, status=status).order_by('-date_ticketed')
 		else:
 			if self.request.user.has_perm("ticket.view_ticket"):
-				queryset = queryset.order_by('-urgency')
+				queryset = queryset.order_by('-date_ticketed')
 			else:
-				queryset = queryset.filter(author=self.request.user).order_by('-urgency')
+				queryset = queryset.filter(author=self.request.user).order_by('-date_ticketed')
 		return queryset
 
 class UserTicketListView(LoginRequiredMixin, ListView):
@@ -58,7 +58,7 @@ class UserTicketListView(LoginRequiredMixin, ListView):
 		queryset = super().get_queryset()
 		user = get_object_or_404(User, username=self.kwargs.get('username'))
 		if self.request.user == user or self.request.user.has_perm("ticket.view_ticket"):
-			queryset = Ticket.objects.filter(author=user).order_by('-urgency')
+			queryset = Ticket.objects.filter(author=user).order_by('-date_ticketed')
 		else:
 			raise PermissionDenied
 		return queryset
