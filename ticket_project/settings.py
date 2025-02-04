@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-0cw0$!0pkj!gqfb8ivz3lufz)d2rh9%+)hm^26aq#*-jf0fc*)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["nahim-django-ticketing.com", "www.nahim-django-ticketing.com","18.219.28.145", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -166,3 +166,8 @@ DATABASES = {
         'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://nahim-django-ticketing.com",
+    "https://www.nahim-django-ticketing.com"
+]
