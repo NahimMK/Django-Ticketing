@@ -29,9 +29,9 @@
 			      <div class="collapse navbar-collapse" id="navbarToggle">
 			        <div class="navbar-nav mr-auto">
 			          <a class="nav-item nav-link" href="{% url 'user-tickets' user.username %}">Your Tickets</a>
-			          <!-- {% if user.is_staff %} -->
+			          {% if user.is_staff %}
 			          	<a class="nav-item nav-link" href="{% url 'ticket-home' %}">All Tickets</a>
-			          <!-- {% endif %} -->
+			          {% endif %}
 			  {% else %}
 			  	<h2 class="navbar-brand mr-4">Welcome to Django Ticketing</a>
 		      {% endif %}
