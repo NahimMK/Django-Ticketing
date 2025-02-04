@@ -24,7 +24,7 @@ class TicketListView(LoginRequiredMixin, ListView):
 	paginate_by = 5
 
 	def get_queryset(self):
-		return Ticket.objects.order_by('-urgency', '-date_ticketed').order_by('-urgency')
+		return Ticket.objects.order_by('-date_ticketed', '-urgency')
 
 class FilterListView(LoginRequiredMixin, ListView):
 	model = Ticket
