@@ -112,3 +112,7 @@ a.article-title:hover {
 .replies {
     margin-left: 20px;
 }
+
+.btn-outline-info a {
+  color: white !important;
+}
