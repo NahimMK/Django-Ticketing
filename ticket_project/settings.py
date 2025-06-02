@@ -168,6 +168,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://3.86.223.121",
     "https://nahim-django-ticketing.com",
     "https://www.nahim-django-ticketing.com"
 ]
